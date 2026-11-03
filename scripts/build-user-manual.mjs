@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises'
+import React from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+const root=new URL('../',import.meta.url)
+const text=await fs.readFile(new URL('src/content/user-manual.zh.md',root),'utf8')
+const logo=(await fs.readFile(new URL('src/assets/foxess/foxess-official-logo.webp',root))).toString('base64')
+const chapters=[...text.matchAll(/^## (.+)$/gm)].map((m,i)=>({id:`chapter-${i+1}`,title:m[1]}))
+let index=0
+const body=renderToStaticMarkup(React.createElement(ReactMarkdown,{remarkPlugins:[remarkGfm],components:{h2:({children})=>React.createElement('h2',{id:`chapter-${++index}`},children)}},text))
+const html=`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FoxEss WIKI 使用手册</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f7fb;color:#20212b;font:15px/1.9 "Segoe UI","Microsoft YaHei",sans-serif}header{padding:32px 6vw;background:#26163d;color:white;border-bottom:5px solid #c9ee90}header img{width:48px;vertical-align:middle;margin-right:16px}header strong{font-size:27px}header p{color:#d8cdeb;margin:10px 0 0}main{display:grid;grid-template-columns:230px minmax(0,900px);gap:38px;max-width:1250px;padding:32px 24px;margin:auto}nav{position:sticky;top:24px;align-self:start;font-size:12px}nav a{display:block;padding:5px 12px;margin:3px 0;text-decoration:none;color:#5c516b;border-radius:7px}nav a:hover{background:#ece3ff;color:#6d28d9}article{background:white;padding:36px 44px;border:1px solid #e4e4ed;border-radius:18px;min-width:0}h1{font-size:29px;letter-spacing:-.04em}h2{font-size:21px;color:#6d28d9;margin:2.5em 0 1em;border-top:1px solid #e7e4ed;padding-top:20px;scroll-margin-top:20px}h3{font-size:17px;margin:1.8em 0 .5em}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}th,td{border:1px solid #e5e2ed;text-align:left;vertical-align:top;padding:10px 12px}th{background:#f1ebff}code{font-size:.88em;overflow-wrap:anywhere;background:#f3f1f6;border-radius:4px;padding:2px 4px}a{color:#6d28d9}li{margin:5px 0}strong{font-weight:650}footer{margin:20px auto 50px;max-width:900px;color:#82788e;font-size:12px;text-align:center}@media(max-width:850px){main{display:block;padding:16px}nav{position:relative;display:grid;grid-template-columns:1fr 1fr;margin-bottom:20px}article{padding:22px}}@media print{body{background:white;font-size:11pt}header{background:white;color:#26163d;padding:20px 0}header p{color:#555}main{display:block;padding:0}nav{display:none}article{padding:0;border:0}h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:inherit}footer{margin:20px 0}}</style><header><img alt="Fox ESS" src="data:image/webp;base64,${logo}"><strong>FoxEss WIKI</strong><p>使用手册 · 企业资料知识工作台 · 从入库到可追溯的答案</p></header><main><nav aria-label="目录">${chapters.map(c=>`<a href="#${c.id}">${c.title}</a>`).join('')}</nav><article>${body}</article></main><footer>支持离线阅读与浏览器打印 · 品牌来源 fox-ess.com · 开源许可随安装包提供</footer></html>`
+const out=new URL('windows-native/installer/',root)
+await fs.writeFile(new URL('FoxEss-WIKI-使用手册.html',out),html)
+await fs.writeFile(new URL('FoxEss-WIKI-使用手册.md',out),text)
+console.log(`User manual: ${chapters.length} chapters, offline HTML + in-app Markdown`)

@@ -1,0 +1,12 @@
+{
+  "id": "foxess-default",
+  "label": "FoxEss 企业默认模型",
+  "provider": "custom",
+  "baseUrl": "http://128.1.1.95:9906/v1",
+  "defaultModel": "Qwen3.8-27B",
+  "apiMode": "chat_completions",
+  "suggestedContextSize": 1000000,
+  "streamingEnabled": false,
+  "requestTimeoutMinutes": 10,
+  "credentialMarker": "__FOXESS_BUILTIN_CREDENTIAL__"
+}

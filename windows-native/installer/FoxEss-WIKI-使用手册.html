@@ -1,0 +1,142 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FoxEss WIKI 使用手册</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f7fb;color:#20212b;font:15px/1.9 "Segoe UI","Microsoft YaHei",sans-serif}header{padding:32px 6vw;background:#26163d;color:white;border-bottom:5px solid #c9ee90}header img{width:48px;vertical-align:middle;margin-right:16px}header strong{font-size:27px}header p{color:#d8cdeb;margin:10px 0 0}main{display:grid;grid-template-columns:230px minmax(0,900px);gap:38px;max-width:1250px;padding:32px 24px;margin:auto}nav{position:sticky;top:24px;align-self:start;font-size:12px}nav a{display:block;padding:5px 12px;margin:3px 0;text-decoration:none;color:#5c516b;border-radius:7px}nav a:hover{background:#ece3ff;color:#6d28d9}article{background:white;padding:36px 44px;border:1px solid #e4e4ed;border-radius:18px;min-width:0}h1{font-size:29px;letter-spacing:-.04em}h2{font-size:21px;color:#6d28d9;margin:2.5em 0 1em;border-top:1px solid #e7e4ed;padding-top:20px;scroll-margin-top:20px}h3{font-size:17px;margin:1.8em 0 .5em}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}th,td{border:1px solid #e5e2ed;text-align:left;vertical-align:top;padding:10px 12px}th{background:#f1ebff}code{font-size:.88em;overflow-wrap:anywhere;background:#f3f1f6;border-radius:4px;padding:2px 4px}a{color:#6d28d9}li{margin:5px 0}strong{font-weight:650}footer{margin:20px auto 50px;max-width:900px;color:#82788e;font-size:12px;text-align:center}@media(max-width:850px){main{display:block;padding:16px}nav{position:relative;display:grid;grid-template-columns:1fr 1fr;margin-bottom:20px}article{padding:22px}}@media print{body{background:white;font-size:11pt}header{background:white;color:#26163d;padding:20px 0}header p{color:#555}main{display:block;padding:0}nav{display:none}article{padding:0;border:0}h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:inherit}footer{margin:20px 0}}</style><header><img alt="Fox ESS" src="data:image/webp;base64,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"><strong>FoxEss WIKI</strong><p>使用手册 · 企业资料知识工作台 · 从入库到可追溯的答案</p></header><main><nav aria-label="目录"><a href="#chapter-1">1. 先认识应用里的四样东西</a><a href="#chapter-2">2. 安装、首次启动与默认模型</a><a href="#chapter-3">3. 界面导航与日常工作顺序</a><a href="#chapter-4">4. 新建、打开与切换知识库</a><a href="#chapter-5">5. 来源与自动同步：手动来源和多个额外目录</a><a href="#chapter-6">6. 入库方式二：手工添加文件</a><a href="#chapter-7">7. 解析 PDF、Office 和图片资料</a><a href="#chapter-8">8. 添加模型、切换模型与独立路由</a><a href="#chapter-9">9. 如何对话并核实答案</a><a href="#chapter-10">10. 查看 Wiki、关系图与原始数据</a><a href="#chapter-11">11. 更新、删除与撤回知识</a><a href="#chapter-12">12. 队列、审阅与任务统计</a><a href="#chapter-13">13. 备份、恢复与迁移</a><a href="#chapter-14">14. API、MCP、Skill 与后台运行</a><a href="#chapter-15">15. 常见问题</a><a href="#chapter-16">16. 品牌与开源组件</a></nav><article><h1>FoxEss WIKI 使用手册</h1>
+<p>版本：v1.0.0 · 首个完整版本 · Windows 桌面应用</p>
+<p>FoxEss WIKI 把产品手册、设备参数、认证标准和其他资料编译为相互关联的知识页面，帮助你查资料、比较产品并追溯依据。新导入默认登记原文件的位置并直接读取，不把完整原文件复制到知识库；本地保存 Wiki、索引、来源依赖和必要缓存。已有知识库与历史资料副本可以继续使用。</p>
+<h2 id="chapter-1">1. 先认识应用里的四样东西</h2>
+<table><thead><tr><th>名称</th><th>含义</th><th>例子</th></tr></thead><tbody><tr><td>知识库</td><td>一套独立的资料、Wiki、来源依赖和会话记录</td><td>设备资料库、认证标准库</td></tr><tr><td>原始资料</td><td>入库所依据的原文件；新导入保存位置引用，旧库可以保留本地副本</td><td>共享盘 PDF、本地 Word、Excel、文本</td></tr><tr><td>Wiki 页面</td><td>从资料中整理出的知识，数量不等于文档数量</td><td>产品实体页、概念页、来源摘要、比较页</td></tr><tr><td>模型配置</td><td>用于分析、编译或对话的服务连接</td><td>企业默认模型、自定义模型</td></tr></tbody></table>
+<p>一份手册可能产生多个页面，多份相关手册也可能共同维护一个页面。队列处理的是文档任务，待审阅处理的是建议或问题，因此两处数字不要求一致。</p>
+<p>来源引用记录在项目的 <code>.llm-wiki/external-sources.json</code> 中。<code>raw/sources/...</code> 是稳定的来源逻辑路径：它会出现在应用文件树、引用和接口里，磁盘上可以没有对应的原文件。应用通过登记信息读取共享盘或本地原文件，原文预览、提取、检索和来源撤回继续使用同一来源身份。</p>
+<h2 id="chapter-2">2. 安装、首次启动与默认模型</h2>
+<ol>
+<li>使用有共享盘读取权限的 Windows 账号登录，安装 FoxEss WIKI。程序包含 PDF 解析和 MCP 运行所需组件，无须安装开发工具、WSL 或 Docker。</li>
+<li>新电脑首次通过安装创建的快捷方式启动，会打开知识库配置界面。选择一个空的本地目录存放新知识库；不要放在程序目录或被扫描的共享目录内。</li>
+<li>填写共享来源目录，可使用 <code>\\服务器\共享\资料目录</code> 这样的 UNC 路径。留空时可稍后设置。</li>
+<li>首次安装可不填写模型信息，直接使用“FoxEss 企业默认模型”。需要处于能够访问企业模型服务的网络中；免配置并不表示离线推理。</li>
+<li>默认模型在“设置 → LLM 模型”中可见，显示名称、地址和连接测试入口。其密钥不在界面展示。你仍可添加自己的模型。</li>
+<li>先用少量代表性文件检查解析与问答效果，再扩大来源范围。手动导入、启用同步或恢复队列后，入库任务会按可用模型继续处理；检查队列状态，确认何时开始调用模型。</li>
+</ol>
+<p>如果当前 Windows 账号已有配置，应用沿用原配置，不重新询问模型或覆盖原知识库。更换程序安装位置不会自动搬迁知识库。</p>
+<h2 id="chapter-3">3. 界面导航与日常工作顺序</h2>
+<ul>
+<li><strong>顶部工作区</strong>：查看当前知识库、当前位置和模型；“切换知识库”返回知识库选择页；“使用手册”打开本手册。</li>
+<li><strong>知识对话</strong>：围绕库中资料提问，查看引用并继续追问。</li>
+<li><strong>Wiki</strong>：浏览生成的知识页面、目录和双向链接。</li>
+<li><strong>原始资料</strong>：添加资料、查看来源文件、打开原文件和处理入库任务。</li>
+<li><strong>全库检索</strong>：先找相关页面，再读正文和来源。</li>
+<li><strong>知识关系图</strong>：查看实体、概念、来源等页面之间的连接。</li>
+<li><strong>知识检查／待审阅</strong>：处理断链、矛盾、合并建议等问题。</li>
+<li><strong>设置</strong>：模型、共享目录导入、来源监控、解析、网络、API 和维护工具。</li>
+</ul>
+<p>推荐顺序：打开知识库 → 检查模型 → 添加或同步资料 → 查看队列与审阅 → 对话问答 → 回到原文核实重要结论。</p>
+<h2 id="chapter-4">4. 新建、打开与切换知识库</h2>
+<h3>新建一个库</h3>
+<p>在知识库选择页点击“新建项目／新建知识库”，选择本地父目录并填写名称。例如父目录为 <code>D:\知识库</code>、名称为“设备资料”，实际目录为 <code>D:\知识库\设备资料</code>。这一步创建存储位置、规则和项目标识，尚未指定外部来源，也不会自动读取父目录中的其他文件。新库有独立的来源登记、Wiki 和会话；默认启用企业增强的来源依赖、完整目录和任务统计。</p>
+<p>库内 <code>purpose.md</code> 描述目标与范围，<code>schema.md</code> 描述页面组织规则。可通过文件视图查看、编辑这些规则，例如要求保留厂家、精确型号、版本、单位、条件和来源。规则用于引导编译，不保证模型不会判断错误。</p>
+<h3>打开已有库</h3>
+<p>点击“打开项目／打开知识库”，选择包含 <code>wiki</code>、<code>raw</code> 和 <code>.llm-wiki</code> 的项目目录。不要把普通共享资料目录直接当作已有知识库打开；它们承担不同作用。</p>
+<h3>切换库</h3>
+<p>点击顶部“切换知识库”，或左侧底部切换按钮，再从最近项目中选择另一个库。注意顶部显示的库名，避免在错误的库中提问或添加资料。移除最近项目记录不等于删除磁盘上的库。历史列表会清理已确认在磁盘上删除或已不再是有效知识库的项目；暂时不可访问、权限故障或共享盘断连不会直接当作项目已删除。</p>
+<h2 id="chapter-5">5. 来源与自动同步：手动来源和多个额外目录</h2>
+<p>“设置 → 来源与自动同步”把当前知识库的来源分为两组，直接展示电脑或共享盘上的真实位置。它们都直接读取原文件，不把完整原文复制进知识库；<code>raw/sources/external/...</code> 是稳定的逻辑来源身份，不是原文件被复制后的实际位置。</p>
+<h3>手动登记的来源：自动监控始终开启</h3>
+<p>通过“原始资料 → ＋文件夹／＋导入”登记的来源，应用运行并打开对应项目时会约每分钟检查一次，不需要再勾选总开关，也不会因为额外监控目录被停用或移除而停止。</p>
+<ul>
+<li>“＋文件夹”：检查整个登记文件夹及子目录，发现符合规则的新增文件，并处理已有来源的修改和确认删除。</li>
+<li>“＋导入”：检查明确选中的文件；不会因为它们位于某个父目录，就自动导入该父目录的其他新文件。</li>
+<li>列表显示真实路径和已登记文件数。需要停止某个手动来源并撤回对应知识时，在“原始资料”中明确移除该来源；这不会删除原位置的文件。</li>
+</ul>
+<h3>额外监控目录：可添加多个，各自启停和设置周期</h3>
+<ol>
+<li>打开要使用的知识库，在“来源与自动同步”的“额外监控目录”区域添加本地目录或 UNC 共享盘目录。</li>
+<li>为每一条目录选择是否启用及扫描周期。不同目录独立工作，不存在一个会关闭手动来源监控的总开关。</li>
+<li>保存设置后生效；可逐条查看上次扫描时间并触发立即扫描。不要把空路径、项目内部 <code>raw</code>、<code>wiki</code>、<code>.llm-wiki</code> 等位置作为额外来源，也不要把包含当前项目的父目录设为来源。</li>
+<li>新增、修改、删除文件仍在原目录完成。程序周期扫描后更新来源登记、撤回受影响知识并按队列重新构建；未变化的文件跳过。</li>
+<li>暂停某个额外目录仅停止该目录的定时扫描；移除某条额外监控仅取消这条配置，保留原文、来源登记及已入库知识。相同原文件仍被手动登记时，手动监控继续工作。若不再希望知识库使用某个来源，请到“原始资料”明确移除。</li>
+</ol>
+<p>同一目录不必重复添加，重叠的父子目录也应尽量整理为清楚的范围。同一物理文件路径会复用已有逻辑来源，单个目录的检查不会擅自撤回仍由其他有效目录或手动登记持有的来源；不同路径但内容相同的文件不承诺全库内容去重。</p>
+<p>在“资料文件夹监控”检查扩展名、排除目录和大小限制，并确认模型与队列状态。在“原始资料”和底部队列查看发现、解析、模型分析、生成、合并、完成或失败状态。目录扫描成功不等于全部文件已完成知识编译；排队、模型不可用或暂停会推迟入库。</p>
+<p>扫描周期是检查触发频率，不是完成时间。大文件、文件数量、共享盘延迟、解析和模型排队都会增加耗时。应用需要保持运行，运行账号需要能读取来源；当前用户有共享盘权限不代表另一台服务器或另一个运行账号也有权限。</p>
+<p>文件类型和大小限制以当前设置为准，默认单文件上限为 100 MB。共享盘断连、权限异常和 I/O 故障会保留来源及已有知识，等待连接恢复；不会直接当作文件已删除。只有确认原位置可访问且文件已删除时才执行来源撤回。</p>
+<p>升级会兼容旧单目录配置，原路径、启停状态、周期和扫描记录迁入额外目录列表；原知识库、手动来源、旧版本地副本和已生成 Wiki 不会因多目录升级被清空。后续扫描可以沿用既有逻辑身份绑定原文件，必要的旧本地副本归档保存在 <code>.llm-wiki/legacy-sources</code>。更改来源范围或迁移电脑前请备份知识库，并单独备份外部原文。</p>
+<h2 id="chapter-6">6. 入库方式二：手工添加文件</h2>
+<p>在“原始资料”使用以下入口；原文件可以位于本地磁盘，也可以位于有权限访问的共享盘。</p>
+<table><thead><tr><th>入口</th><th>作用</th></tr></thead><tbody><tr><td>＋导入</td><td>选择一个或多个文件，登记原始位置并进入解析、入库流程</td></tr><tr><td>＋文件夹</td><td>登记一个文件夹，递归发现符合规则的文件并保留目录关系</td></tr><tr><td>文件旁的“提取到 Wiki”</td><td>对已经登记或保存在旧库中的该份来源重新发起入库任务</td></tr></tbody></table>
+<p>以上文件和文件夹入口都不复制完整原文件到项目。应用运行期间约每分钟检查手动登记的文件与文件夹：已登记文件的修改、删除会同步处理，登记文件夹中的新增文件也会被发现。额外监控目录则分别使用各自设置的扫描周期，停用或移除额外目录不会关闭手动来源的检查。扫描和编译需要时间，窗口关闭到后台或账号退出时的运行状态以后台说明为准。</p>
+<p>原文件仍需保留在登记位置。不要把临时下载目录或即将删除的文件作为长期来源；移动、改名或换盘后，应更新来源登记或重新导入，并核对、移除不再使用的旧来源。相同物理路径重复导入会复用登记；跨文件名、跨目录但内容相同的文件仍可能被视为不同来源，不能据此保证全库内容去重。</p>
+<p>使用应用已有的 URL 或文本入口时，应另行确认其保存范围；它们可能需要保存抓取结果或用户输入，不等同于外部文件引用。</p>
+<h3>入库过程中发生什么</h3>
+<ol>
+<li>读取和解析文件，必要时生成提取文本和图片。</li>
+<li>检索全库目录中的相关旧页面，读取有预算限制的正文节选。</li>
+<li>模型分析实体、概念、参数、版本及已有知识关联；分析后再次检索补充相关页面。</li>
+<li>原版编译器生成来源、实体、概念等页面，并合并已有页面、建立链接。</li>
+<li>更新完整目录、来源依赖和相关主题；记录本次耗时和接口用量。</li>
+</ol>
+<p>比较页和综合页按内容关联生成，不会为所有文件两两建页。名称不同、解析不完整或模型判断失误都可能造成漏关联；请用代表性问题和原文检查效果。</p>
+<h2 id="chapter-7">7. 解析 PDF、Office 和图片资料</h2>
+<p>PDF 使用内置解析组件提取文字；图像提取和视觉理解取决于多模态配置。<strong>提取到文字不等于读懂了图纸、曲线或所有扫描内容。</strong> 扫描 PDF、文字以图片形式存在的文档，以及复杂图表，可能需要额外 OCR／视觉模型和人工核对。</p>
+<p>Word、Excel、PPT 等格式按现有解析能力处理。合并单元格、隐藏内容、复杂版式和旧格式可能影响提取。发现答案缺少关键参数时，先查看原始文件与提取结果，再判断是否需要补充解析或重新处理该来源。</p>
+<h2 id="chapter-8">8. 添加模型、切换模型与独立路由</h2>
+<h3>使用企业默认模型</h3>
+<p>进入“设置 → LLM 模型”，展开“FoxEss 企业默认模型”。模型名称和服务地址可见，凭据由应用管理，不提供密钥查看或复制按钮。连接测试用于确认服务可达；功能测试会发送小规模请求。</p>
+<p>企业构建可包含默认模型凭据，界面和普通配置不展示其原值；这不等于能抵御专业逆向提取。公开无凭据构建不带企业模型密钥，首次安装需自行配置可用模型。若旧版使用“内置凭据”标记，改装公开无凭据构建后该标记会保留，但不再包含原生凭据，需要管理员提供模型密钥或切换模型；直接填写过的自定义模型配置仍保留。内置凭据更新需要发布新的客户端构建。企业网络不可达时，可联系管理员或切换自定义模型。</p>
+<h3>添加自己的模型</h3>
+<ol>
+<li>在同一页面点击“添加自定义模型”，填写容易识别的名称。</li>
+<li>选择兼容协议，填写 Base URL、精确模型名和自己的 API Key。OpenAI 兼容服务通常提供以 <code>/v1</code> 结尾的地址，具体以服务方接口为准。</li>
+<li>测试连接，再测试实际模型功能。失败时核对网络、端口、模型名、协议、权限和代理设置。</li>
+<li>启用该模型作为全局模型，或仅将其指定给某类任务。仅添加配置不等于已经切换使用。</li>
+</ol>
+<h3>对话与入库使用不同模型</h3>
+<p>分别选择 <strong>Chat 模型</strong>和 <strong>Ingest 模型</strong>。前者服务问答，后者服务知识库分析与编译。留空表示跟随全局活跃模型。启用“项目独立模型”时，它会优先覆盖该项目的 Chat／Ingest 选择。</p>
+<p>桌面、原生 API 和调用 API 的 MCP 使用一致的模型路由。换对话模型不需要重新入库；换入库模型也不会自动把全部旧页面重编译。需要重处理旧文档时，先明确范围并备份。</p>
+<h2 id="chapter-9">9. 如何对话并核实答案</h2>
+<p>先确认顶部库名，再提出包含对象、型号、版本和比较条件的问题。例如：“比较产品 A 与产品 B 在额定电压和认证范围上的差异，列出来源；没有依据的项目标为未知。”</p>
+<h3>检索和推理选项</h3>
+<table><thead><tr><th>选项</th><th>使用建议</th></tr></thead><tbody><tr><td>传统检索</td><td>适合资料明确、希望尽快获得基于检索内容的回答</td></tr><tr><td>智能检索</td><td>适合需要多轮查找、比较或补充证据的问题，可能有更多调用</td></tr><tr><td>只读原文</td><td>适合要求严格依据来源的提问；仍需检查引用是否覆盖问题</td></tr><tr><td>快速</td><td>简单定位和短问答</td></tr><tr><td>标准</td><td>日常解释、参数查找和一般比较</td></tr><tr><td>深度</td><td>更复杂的跨资料推理，通常更慢、成本更高</td></tr><tr><td>本地优先</td><td>优先使用本地知识证据；它是策略选择，不是对所有外部网络请求的系统级禁用</td></tr></tbody></table>
+<p>AnyTxt 是另外的本地文件检索集成；网页搜索使用外部网页。若希望仅依据知识库回答，关闭网页搜索和不需要的 AnyTxt，明确要求“只使用当前库，证据不足请说明”。已有开关沿用原设置，不会因品牌升级自动替你开启外部搜索。</p>
+<p>重要结论请点开引用，检查精确型号、版本、单位和适用条件，再打开原文件核对。引用存在不代表结论必然正确；模型也可能加入一般知识，因此问题应明确证据要求。</p>
+<h2 id="chapter-10">10. 查看 Wiki、关系图与原始数据</h2>
+<p><strong>Wiki 页面</strong>：从知识目录或全库目录进入，点击链接查看相关页面。完整目录覆盖知识页面；最近更新只是浏览入口，不代表全库范围。</p>
+<p><strong>关系图</strong>：节点表示页面，边表示页面链接或关联。实体通常是具体产品、设备、厂家或对象；概念是技术术语和规则；来源是原始资料的摘要与引用入口；Topic 是目录或主题组织页；其他是未归入常见类型的页面。概念可用于解释实体的属性或原理，但不只是实体的解释。</p>
+<p><strong>原始数据</strong>：进入“原始资料”，点击文件可在应用预览。外部来源显示“外部来源 · 只读”和真实路径；应用中的原文展示不写回来源，文件行或预览中的打开按钮使用系统关联应用打开原始位置的文件。你仍可按原有权限在共享盘或本地原始位置维护文档，随后由同步流程更新知识。</p>
+<p>文档预览和模型提取文本用途不同，核对版式、图片、签章或图纸时应查看原文件。较大的 PDF 可使用系统阅读器直接打开原文件，避免将整份文件装进预览内存。</p>
+<p>本地保存 <code>wiki</code> 生成页面及媒体、索引、<code>.llm-wiki</code> 来源登记与任务元数据，以及必要的解析文本、图片和其他缓存。缓存可能包含从原文提取的内容，也会占用磁盘空间；引用模式减少完整原文件的重复保存，并不表示本地完全没有资料内容。<code>raw/sources</code> 中还可以保留旧库实文件，但新登记来源可能只有应用文件树中的虚拟条目。</p>
+<h2 id="chapter-11">11. 更新、删除与撤回知识</h2>
+<p>对配置为持续同步的共享目录和手动登记来源：新增文件被发现后入库；修改文件会撤回旧版本影响并重新处理；确认删除的文件会按来源依赖和下游链接撤回受影响页面，再用仍有效的来源重建。无法连接原位置时保持已有记录，不把断连当成全部资料删除。</p>
+<p>在“原始资料”移除外部来源时，应用移除该引用并撤回相关知识，<strong>不会删除共享盘或本地原始位置的文件</strong>。被手动移除的文件会保留忽略记录，避免文件夹下一轮扫描立即重新添加；明确重新导入可再次登记。旧库实文件仍保留兼容处理；涉及已转为引用的旧副本时可归档到 <code>.llm-wiki/legacy-sources</code>。请先核对界面中的来源路径和删除说明。</p>
+<p>混合来源页面会先整体撤回，而不是只删掉来源列表中的一个名字。受影响页面暂时不可读、API 暂时阻断或重建队列增加，可能是为了避免旧事实继续被使用。事务中断时会保留状态供后续恢复；不要手工删掉阻断状态来强行放行。</p>
+<p>撤回是从活跃知识与检索中移除影响，<strong>不等于安全擦除磁盘上的所有历史副本</strong>。归档、备份和日志可以保留。没有完整来源依赖的历史知识、模型漏引和推理错误仍需核对，不能将自动处理等同于逐条事实审计。</p>
+<h2 id="chapter-12">12. 队列、审阅与任务统计</h2>
+<p>任务可能处于等待、解析、模型分析、生成／合并、完成、失败、取消或中断等状态。先查看具体错误再重试，避免把权限、解析或上下文超限问题当作单纯网络波动。</p>
+<p>进入“原始资料”或“Wiki”，展开左侧文件树底部的活动／队列面板查看进度；侧栏收起时先展开侧栏。文件列表也显示每份来源的状态。<code>Queue: X/Y</code> 的 X 包括完成、失败和取消，不能直接当作成功入库数；Y 是队列记录数，不一定是共享盘文件总数。“检查”界面的进度属于 Wiki 质量检查，不是文档入库进度。</p>
+<p>待审阅是需要你判断的建议或问题，例如矛盾、重复、缺失信息；不是“一条等于一份文档”。在接受修改前查看关联页面和来源。</p>
+<p>任务统计位于“设置 → 维护”，也可展开底部活动面板查看“任务耗时与 Token 统计”。每次尝试单独记录，包括模型调用和阶段耗时；Token 只使用接口返回值。</p>
+<ul>
+<li><code>complete</code>：调用用量完整；<code>partial</code>：只返回部分用量；<code>unavailable</code>：接口未提供可用统计。</li>
+<li>未知不是零，不根据字符数估算。升级前没有记录的任务不能补算。</li>
+<li>并发任务耗时相加不等于从第一条开始到最后一条结束的日历跨度。</li>
+<li><code>waitMs</code> 从最初入队到本次开始，重试时包含此前尝试时间，不是纯排队耗时。</li>
+</ul>
+<h2 id="chapter-13">13. 备份、恢复与迁移</h2>
+<p>备份整个知识库目录，包括隐藏或点开头的元数据目录；不要只复制 <code>wiki</code>。这会保存 Wiki、索引、来源登记、必要缓存和库内已有资料，<strong>不会自动包含登记在共享盘或其他本地位置的外部原文件</strong>。原文件需要按企业文档备份制度单独保存。在维护页面使用项目导出／导入时，也应核对其数据范围，模型与账号配置需单独保存。</p>
+<p>应用配置位于 <code>%APPDATA%\com.llmwiki.app\app-state.json</code>。这是为兼容已有安装保留的存储标识，产品名称已是 FoxEss WIKI。你自行添加的模型密钥和 API 令牌属于私有配置，不应放入公共资料目录。</p>
+<p>迁移时先停止入库并退出应用，复制一致的项目与配置；在目标账号下恢复，保留项目 UUID。新路径变化时需要适配项目注册、自动导入配置和来源登记中的绝对路径。共享盘 UNC 地址保持一致且目标账号有权限时，可以继续访问同一批原文；本地文件如由 <code>D:</code> 移至其他盘或另一台电脑，需要重新定位或导入来源。原文路径或权限未恢复前，已有 Wiki 仍保存，读取原文与更新会暂时受限。先检查模型、来源权限、图片和队列，再启用自动同步；仅刷新目录或重新核对文件哈希不等于全量重新调用模型。</p>
+<h2 id="chapter-14">14. API、MCP、Skill 与后台运行</h2>
+<p>默认 API 为 <code>http://127.0.0.1:19828/api/v1</code>，带令牌认证。CLI、MCP 和 Skill 通过统一 API 使用知识，避免绕过撤回控制。安装包附有 CLI 和 MCP 所需 Node 运行时；接入方式见安装说明，未全局安装 Node 时请使用包内 <code>node.exe</code> 的绝对路径。</p>
+<p>当前产品是 Windows 桌面应用加 API，<code>http://127.0.0.1:19828/</code> 不是完整 Web 界面。其他电脑访问服务器还需要配置 API 监听范围、认证与网络访问条件。</p>
+<p>登录启动使用当前 Windows 用户的计划任务，策略不允许时使用启动文件夹快捷方式；需要账号保持登录。不要同时启动两个使用同一配置和端口的部署。共享盘权限不会由安装包自动复制。</p>
+<h2 id="chapter-15">15. 常见问题</h2>
+<table><thead><tr><th>问题</th><th>先检查什么</th></tr></thead><tbody><tr><td>安装后没有模型向导</td><td>是否沿用了当前账号的旧配置；在设置中查看模型</td></tr><tr><td>企业默认模型连接失败</td><td>企业网络、模型服务可达性、服务状态；密钥过期需管理员更新构建</td></tr><tr><td>新资料没有及时出现</td><td>当前库、共享目录、扫描周期、排除规则、自动入库和队列</td></tr><tr><td>页面数与文档数不同</td><td>一份文档可生成多页，多份资料可合并一页，审阅另行计数</td></tr><tr><td>已删除的内容似乎还被回答</td><td>查引用、当前库、旧版本重建和外部搜索；核对页面及来源，不只看模型措辞</td></tr><tr><td>PDF 缺参数或图片信息</td><td>原文件是否扫描件，解析结果、视觉／OCR 配置和型号版本</td></tr><tr><td>Token 显示未知</td><td>模型接口是否返回 usage；未知不表示免费或未消耗</td></tr><tr><td>入库耗时很长</td><td>文档长度、图片、模型速度、并发、生成合并、重试和上下文限制</td></tr><tr><td>文件树有原始资料，但本地 raw/sources 没有同名文件</td><td>查看来源登记及只读提示中的真实路径；引用模式允许逻辑条目没有本地原文件</td></tr><tr><td>原文突然打不开</td><td>原文件是否移动、改名、删除，UNC 网络与当前运行账号权限是否正常</td></tr><tr><td>项目备份恢复后缺少原文</td><td>外部原文件未包含在项目备份中；恢复共享盘访问或重新定位本地原文</td></tr><tr><td>已删除项目仍曾出现在最近列表</td><td>重新打开知识库选择页；确定不存在的项目会清理，暂时不可访问的项目会保留</td></tr></tbody></table>
+<p>排障时可提供任务时间、文件名、错误摘要和模型名称，不要提交模型密钥或 API 令牌。先备份，再进行会改变来源、知识范围或队列状态的维护。</p>
+<h3>应用版本更新</h3>
+<p>从 v1.0.0 开始，FoxEss WIKI 使用 <a href="https://github.com/superrepus/WIKI/releases">superrepus/WIKI 的 GitHub Releases</a> 发布完整安装包和版本说明。</p>
+<ul>
+<li>应用运行时，每天按电脑本地时间早上 <strong>06:00</strong> 检查最新正式发布版本。电脑关闭、应用退出或休眠错过检查时，下次启动或恢复运行后补查；定期检查只获取版本信息，不会自动安装。</li>
+<li>发现新版本后，顶部提示条与“设置 → 关于”会展示新版本。可以查看更新说明、暂时忽略，或手动点击“检查更新”。网络不可达时保留当前程序与知识库，稍后重试。</li>
+<li>点击“一键更新并重启”后，程序先保护正在编辑的内容和入库队列，在可安全退出时下载并校验版本发布者签名及安装包哈希，再退出应用、覆盖程序文件并重新打开。不要在更新进行时手动打开第二个实例。</li>
+<li>更新沿用 <code>com.llmwiki.app</code> 的应用设置、项目登记和当前模型配置；知识库与外部原文位置不变，不要求重新入库。更新程序不清空 Wiki、来源索引或队列。</li>
+<li>下载、校验、文件冲突或安装失败时会保留原配置和知识库，提示具体状态；安装阶段失败会尝试恢复原程序并重新打开。仍可从 Releases 下载正式安装包，退出应用后手动覆盖安装。</li>
+</ul>
+<p>正式安装的应用可使用一键更新。直接运行开发目录中没有安装清单的程序时，请使用完整安装包安装到独立程序目录后再更新。更新需要电脑能够访问 GitHub；应用退出期间不会由独立 Windows 任务唤醒电脑抓取更新。</p>
+<h2 id="chapter-16">16. 品牌与开源组件</h2>
+<p>FoxEss WIKI 使用 <a href="https://www.fox-ess.com/">Fox ESS 官网</a> 的品牌标识，面向企业资料知识工作。底层保留 nashsu/llm_wiki 的知识编译、实体分析、检索、对话和接口能力；开源许可和对应源码随安装包提供。界面品牌调整不改变来源文件、项目标识及既有数据格式。</p></article></main><footer>支持离线阅读与浏览器打印 · 品牌来源 fox-ess.com · 开源许可随安装包提供</footer></html>
